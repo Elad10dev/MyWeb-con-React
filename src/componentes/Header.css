@@ -1,0 +1,59 @@
+/* Estilos para Header */
+
+.header {
+  background: linear-gradient(90deg, #0d0d2b, #2c003e); /* Fondo oscuro negro-púrpura */
+  color: #39FF14; /* Verde alienígena */
+  padding: 20px;
+  display: grid;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  width: 100vw; /* Usa todo el ancho de la ventana */
+  z-index: 1000;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+  overflow: hidden; /* Asegura que el contenido no se salga del header */
+}
+
+.header h1 {
+  margin: 0;
+  font-family: 'Orbitron', sans-serif; /* Fuente estilo futurista */
+  flex-shrink: 0; /* Evita que el título se encoja */
+}
+
+.header nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: nowrap; /* Mantiene los elementos en una línea */
+  gap: 15px; /* Espacio entre enlaces */
+  overflow: hidden; /* Asegura que el contenido no se salga del nav */
+}
+
+.header nav a {
+  color: #39FF14;
+  text-decoration: none;
+  position: relative;
+  white-space: nowrap; /* Evita que el texto se corte */
+  flex-shrink: 0; /* Evita que los enlaces se encojan */
+  margin: 0 10px; /* Espacio entre enlaces */
+}
+
+.header nav a::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: -10px;
+  width: 0;
+  height: 0;
+  background: radial-gradient(circle, rgba(255,255,255,0.8) 0%, rgba(255,255,255,0) 80%);
+  border-radius: 50%;
+  transition: width 0.5s, height 0.5s, top 0.5s;
+}
+
+.header nav a:hover::after {
+  width: 200px;
+  height: 200px;
+  top: -100px;
+}

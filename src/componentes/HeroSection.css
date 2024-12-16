@@ -1,0 +1,20 @@
+.hero-section {
+  background: linear-gradient(135deg, #0d0d2b 0%, #2c003e 100%);
+  color: #fff;
+  padding: 100px 20px;
+  text-align: center;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero-section h1 {
+  font-size: 3rem;
+  margin-bottom: 20px;
+}
+
+.hero-section p {
+  font-size: 1.5rem;
+}
