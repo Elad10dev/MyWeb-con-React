@@ -4,56 +4,83 @@
   background: linear-gradient(90deg, #0d0d2b, #2c003e); /* Fondo oscuro negro-púrpura */
   color: #39FF14; /* Verde alienígena */
   padding: 20px;
-  display: grid;
-  justify-content: space-between;
-  align-items: center;
-  position: sticky;
+  display: flex;
+  justify-content: space-between; /* Distribuir el espacio entre elementos */
+  align-items: center; /* Alinear los elementos verticalmente */
+  position:relative;
   top: 0;
-  width: 100vw; /* Usa todo el ancho de la ventana */
+  width: 100%;
   z-index: 1000;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
-  overflow: hidden; /* Asegura que el contenido no se salga del header */
+  transition: background-color 0.3s;
+  background-size: cover;
+  animation: backgroundMove 20s linear infinite;
 }
 
-.header h1 {
-  margin: 0;
-  font-family: 'Orbitron', sans-serif; /* Fuente estilo futurista */
-  flex-shrink: 0; /* Evita que el título se encoja */
+.header:hover {
+  background: linear-gradient(90deg, #000000, #1b1b32); /* Fondo negro */
 }
 
-.header nav {
+.logo {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 24px;
+}
+
+.mainNav__links {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-wrap: nowrap; /* Mantiene los elementos en una línea */
-  gap: 15px; /* Espacio entre enlaces */
-  overflow: hidden; /* Asegura que el contenido no se salga del nav */
+  gap: 20px;
 }
 
-.header nav a {
-  color: #39FF14;
+.mainNav__link {
+  color: #ffffff;
   text-decoration: none;
+  font-family: 'Orbitron', sans-serif;
+  font-size: 16px;
   position: relative;
-  white-space: nowrap; /* Evita que el texto se corte */
-  flex-shrink: 0; /* Evita que los enlaces se encojan */
-  margin: 0 10px; /* Espacio entre enlaces */
 }
 
-.header nav a::after {
+.mainNav__link::after {
   content: '';
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
-  top: -10px;
+  bottom: -5px;
   width: 0;
-  height: 0;
-  background: radial-gradient(circle, rgba(255,255,255,0.8) 0%, rgba(255,255,255,0) 80%);
-  border-radius: 50%;
-  transition: width 0.5s, height 0.5s, top 0.5s;
+  height: 2px;
+  background: #39FF14;
+  transition: width 0.3s;
 }
 
-.header nav a:hover::after {
-  width: 200px;
-  height: 200px;
-  top: -100px;
+.mainNav__link:hover::after {
+  width: 100%;
+}
+
+.mainNav__icon {
+  display: none;
+}
+
+.mainNav__icon svg {
+  width: 24px;
+  height: 24px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .mainNav__links {
+    display: none;
+  }
+
+  .mainNav__icon {
+    display: block;
+  }
+}
+
+/* Animaciones del fondo */
+@keyframes backgroundMove {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 1000px 0;
+  }
 }
