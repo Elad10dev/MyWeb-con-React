@@ -1,16 +1,21 @@
 import React from 'react';
 import './Header.css';
 
-const Header: React.FC = () => {
+interface HeaderProps {
+  setActiveSection: (section: string) => void;
+}
+
+const Header: React.FC<HeaderProps> = ({ setActiveSection }) => {
   return (
     <header className="header">
       <div className="logo">Explorador Galáctico</div>
-      <nav className="mainNav__links">
-        <a href="#home" className="mainNav__link">Inicio</a>
-        <a href="#proyectos" className="mainNav__link">Proyectos</a>
-        <a href="#contacto" className="mainNav__link">Contacto</a>
+      <nav className="nav-links">
+        <a href="#home" className="nav-link" onClick={() => setActiveSection('home')}>Inicio</a>
+        <a href="#about" className="nav-link" onClick={() => setActiveSection('about')}>Sobre mí</a>
+        <a href="#projects" className="nav-link" onClick={() => setActiveSection('projects')}>Proyectos</a>
+        <a href="#contact" className="nav-link" onClick={() => setActiveSection('contact')}>Contacto</a>
       </nav>
-      <div className="mainNav__icon">
+      <div className="menu-icon">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
           <g data-name="Layer 2" fill="#9197AE">
             <g data-name="menu-2">
