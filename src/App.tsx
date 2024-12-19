@@ -11,6 +11,8 @@ const App: React.FC = () => {
 
   const renderSection = () => {
     switch (activeSection) {
+      case 'home':
+        return <HeroSection />;
       case 'about':
         return <About />;
       case 'projects':
@@ -18,14 +20,13 @@ const App: React.FC = () => {
       case 'contact':
         return <Contact />;
       default:
-        return null;
+        return <HeroSection />;
     }
   };
 
   return (
     <div className="App">
       <Header setActiveSection={setActiveSection} />
-      {activeSection === 'home' && <HeroSection />}
       <main>
         {renderSection()}
       </main>

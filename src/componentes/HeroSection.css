@@ -1,20 +1,96 @@
 .hero-section {
-  background: linear-gradient(135deg, #0d0d2b 0%, #2c003e 100%);
-  color: #fff;
-  padding: 100px 20px;
-  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   height: 100vh;
+  color: #ffffff;
+}
+
+.section {
+  padding: 20px;
+}
+
+.about-me {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 20%;
+}
+
+.profile-pic {
+  height: 100px;
+  width: 100px;
+  border-radius: 50%;
+}
+
+.description {
+  max-width: 60%;
+}
+
+.more-info {
+  display: inline-block;
+  margin-top: 10px;
+  color: #39FF14;
+  text-decoration: none;
+  cursor: pointer; /* Asegura que el cursor cambie */
+}
+
+.projects {
+  height: 60%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
 
-.hero-section h1 {
-  font-size: 3rem;
-  margin-bottom: 20px;
+.project-slider {
+  display: flex;
+  align-items: center;
 }
 
-.hero-section p {
-  font-size: 1.5rem;
+.project {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.project img {
+  max-height: 200px;
+}
+
+.project-description {
+  margin-top: 10px;
+  text-align: center;
+}
+
+.prev-project, .next-project {
+  background: #000;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  margin: 0 10px;
+}
+
+.skills-contact {
+  display: flex;
+  justify-content: space-between;
+  height: 20%;
+}
+
+.skills, .contact {
+  flex: 1;
+  text-align: center;
+}
+
+.icons {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.icons img {
+  height: 40px;
+  width: 40px;
+  cursor: pointer;
 }

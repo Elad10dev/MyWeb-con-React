@@ -10,10 +10,10 @@ const Header: React.FC<HeaderProps> = ({ setActiveSection }) => {
     <header className="header">
       <div className="logo">Explorador Galáctico</div>
       <nav className="nav-links">
-        <a href="#home" className="nav-link" onClick={() => setActiveSection('home')}>Inicio</a>
-        <a href="#about" className="nav-link" onClick={() => setActiveSection('about')}>Sobre mí</a>
-        <a href="#projects" className="nav-link" onClick={() => setActiveSection('projects')}>Proyectos</a>
-        <a href="#contact" className="nav-link" onClick={() => setActiveSection('contact')}>Contacto</a>
+        <span className="nav-link" onClick={() => setActiveSection('home')}>Inicio</span>
+        <span className="nav-link" onClick={() => setActiveSection('about')}>Sobre mí</span>
+        <span className="nav-link" onClick={() => setActiveSection('projects')}>Proyectos</span>
+        <span className="nav-link" onClick={() => setActiveSection('contact')}>Contacto</span>
       </nav>
       <div className="menu-icon">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
