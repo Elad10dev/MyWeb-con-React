@@ -1,11 +1,14 @@
 import React from 'react';
+import { FaDatabase, FaEnvelope, FaLinkedin, FaGithub } from 'react-icons/fa'; // Importación de iconos desde 'react-icons/fa'
+import { SiTypescript, SiJavascript, SiHtml5, SiMysql, SiPostgresql, SiCss3, SiPython } from 'react-icons/si';
+import profilePic from '../imagenes/yo.jpg';
 import './HeroSection.css';
 
 const HeroSection: React.FC = () => {
   return (
     <section className="hero-section">
       <div className="section about-me">
-        <img src="path/to/your-photo.jpg" alt="Mi foto" className="profile-pic" />
+        <img src={profilePic} alt="Mi foto" className="profile-pic" />
         <div className="description">
           <p>Soy un apasionado desarrollador web con experiencia en...</p>
           <a href="#about" className="more-info">Más sobre mí...</a>
@@ -31,17 +34,22 @@ const HeroSection: React.FC = () => {
         <div className="skills">
           <h3>Habilidades</h3>
           <div className="icons">
-            <img src="path/to/skill1.png" alt="Habilidad 1" />
-            <img src="path/to/skill2.png" alt="Habilidad 2" />
-            <img src="path/to/skill3.png" alt="Habilidad 3" />
+            <FaDatabase />
+            <SiTypescript />
+            <SiJavascript />
+            <SiHtml5 />
+            <SiMysql />
+            <SiPostgresql />
+            <SiCss3 />
+            <SiPython />
           </div>
         </div>
         <div className="contact">
           <h3>Contacto</h3>
           <div className="icons">
-            <a href="mailto:tucorreo@ejemplo.com"><img src="path/to/email-icon.png" alt="Correo" /></a>
-            <a href="https://linkedin.com/in/tuusuario" target="_blank"><img src="path/to/linkedin-icon.png" alt="LinkedIn" /></a>
-            <a href="https://github.com/tuusuario" target="_blank"><img src="path/to/github-icon.png" alt="GitHub" /></a>
+            <a href="mailto:tucorreo@ejemplo.com"><FaEnvelope /></a>
+            <a href="https://linkedin.com/in/tuusuario" target="_blank"><FaLinkedin /></a>
+            <a href="https://github.com/tuusuario" target="_blank"><FaGithub /></a>
           </div>
         </div>
       </div>
