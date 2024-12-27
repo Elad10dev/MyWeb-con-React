@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
-import Header from './componentes/Header';
-import HeroSection from './componentes/HeroSection';
-import About from './componentes/About';
-import Projects from './componentes/Projects';
-import Contact from './componentes/Contact';
+import Header from './componentes/header/Header';
+import HeroSection from './componentes/herosection/HeroSection';
+import About from './componentes/about/About';
+import Projects from './componentes/projects/Projects';
+import Contact from './componentes/contact/Contact';
 import './App.css';
 
 const App: React.FC = () => {

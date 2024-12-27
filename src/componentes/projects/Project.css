@@ -1,0 +1,78 @@
+.projects-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 40px 0;
+  background-image: url("https://pixelshares.com/w/img/full/5/3/9/619344-1920x1080-desktop-hd-galaxy-pc-wallpaper.jpg"); /* Ruta desde la carpeta `public` */
+  background-size: cover; /* Ajusta el fondo para cubrir toda la sección */
+  background-position: center;
+  position: relative;
+  overflow: hidden;
+  animation: slidein 100s alternate infinite;
+  z-index: 0;
+}
+
+@keyframes slidein {
+  from {background-position: top; background-size: 1750px;}
+  to {background-position: -100px 0px; background-size: 1500px;}
+}
+
+.projects-section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5); /* Oscurece la imagen de fondo */
+  z-index: 1;
+}
+
+.projects-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  position: relative;
+  z-index: 2; /* Asegura que la sección de proyectos esté por encima del oscurecimiento */
+}
+
+.project-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 200px;
+  background: #ffffff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.project-item:hover {
+  transform: scale(1.2); /* Agranda el tamaño al pasar el ratón */
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+}
+
+.project-item img {
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+}
+
+.project-item button {
+  margin-top: 10px;
+  padding: 10px 20px;
+  background: #39FF14;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.project-item button:hover {
+  background: #32CD32;
+}

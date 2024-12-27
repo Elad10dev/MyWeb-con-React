@@ -1,10 +1,21 @@
 import React from 'react';
-import { FaDatabase, FaEnvelope, FaLinkedin, FaGithub } from 'react-icons/fa'; // Importación de iconos desde 'react-icons/fa'
+import { FaDatabase, FaEnvelope, FaLinkedin, FaGithub } from 'react-icons/fa';
 import { SiTypescript, SiJavascript, SiHtml5, SiMysql, SiPostgresql, SiCss3, SiPython } from 'react-icons/si';
-import profilePic from '../imagenes/yo.jpg';
+import profilePic from '../../imagenes/yo.jpg';
+import projects from '../projects/projectsData';
 import './HeroSection.css';
 
 const HeroSection: React.FC = () => {
+  const [currentProjectIndex, setCurrentProjectIndex] = React.useState(0);
+
+  const nextProject = () => {
+    setCurrentProjectIndex((prevIndex) => (prevIndex + 1) % projects.length);
+  };
+
+  const prevProject = () => {
+    setCurrentProjectIndex((prevIndex) => (prevIndex - 1 + projects.length) % projects.length);
+  };
+
   return (
     <section className="hero-section">
       <div className="section about-me">
@@ -18,15 +29,15 @@ const HeroSection: React.FC = () => {
       <div className="section projects">
         <h2>Proyectos</h2>
         <div className="project-slider">
-          <button className="prev-project">Anterior</button>
+          <button className="prev-project" onClick={prevProject}>Anterior</button>
           <div className="project">
-            <img src="path/to/project1.gif" alt="Proyecto 1" />
+            <img src={projects[currentProjectIndex].img} alt={`Proyecto ${projects[currentProjectIndex].id}`} />
             <div className="project-description">
-              <p>Descripción breve del proyecto 1...</p>
-              <a href="#projects" className="more-info">Saber más...</a>
+              <p>Descripción breve del proyecto {projects[currentProjectIndex].id}...</p>
+              <a href={projects[currentProjectIndex].link} target="_blank" className="more-info">Saber más...</a>
             </div>
           </div>
-          <button className="next-project">Siguiente</button>
+          <button className="next-project" onClick={nextProject}>Siguiente</button>
         </div>
       </div>
 
