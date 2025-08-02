@@ -1,5 +1,9 @@
 import React from 'react';
 import './Header.css';
+import homeIcon from '../../imagenes/3d-house.png';
+import aboutIcon from '../../imagenes/request.png';
+import projectsIcon from '../../imagenes/project-management.png';
+import contactIcon from '../../imagenes/customer-service.png';
 
 interface HeaderProps {
   setActiveSection: (section: string) => void;
@@ -7,13 +11,26 @@ interface HeaderProps {
 
 const Header: React.FC<HeaderProps> = ({ setActiveSection }) => {
   return (
+    <section id="header" className="header-section">
     <header className="header">
-      <div className="logo">Explorador Galáctico</div>
+      <div className="logo">Eladio Castañeda</div>
       <nav className="nav-links">
-        <span className="nav-link" onClick={() => setActiveSection('home')}>Inicio</span>
-        <span className="nav-link" onClick={() => setActiveSection('about')}>Sobre mí</span>
-        <span className="nav-link" onClick={() => setActiveSection('projects')}>Proyectos</span>
-        <span className="nav-link" onClick={() => setActiveSection('contact')}>Contacto</span>
+        <span className="nav-link" onClick={() => setActiveSection('home')}>
+          <img src={homeIcon} alt="Inicio" className="nav-icon" />
+          Inicio
+        </span>
+        <span className="nav-link" onClick={() => setActiveSection('about')}>
+          <img src={aboutIcon} alt="Sobre mí" className="nav-icon" />
+          Sobre mí
+        </span>
+        <span className="nav-link" onClick={() => setActiveSection('projects')}>
+          <img src={projectsIcon} alt="Proyectos" className="nav-icon" />
+          Proyectos
+        </span>
+        <span className="nav-link" onClick={() => setActiveSection('contact')}>
+          <img src={contactIcon} alt="Contacto" className="nav-icon" />
+          Contacto
+        </span>
       </nav>
       <div className="menu-icon">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
@@ -29,6 +46,7 @@ const Header: React.FC<HeaderProps> = ({ setActiveSection }) => {
         </svg>
       </div>
     </header>
+    </section>
   );
 };
 

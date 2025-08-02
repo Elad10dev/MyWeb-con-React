@@ -5,7 +5,13 @@ import profilePic from '../../imagenes/yo.jpg';
 import projects from '../projects/projectsData';
 import './HeroSection.css';
 
-const HeroSection: React.FC = () => {
+// ✅ Declaración de props
+interface HeroSectionProps {
+  setActiveSection: (section: string) => void;
+}
+
+// ✅ Componente con props correctamente tipadas
+const HeroSection: React.FC<HeroSectionProps> = ({ setActiveSection }) => {
   const [currentProjectIndex, setCurrentProjectIndex] = React.useState(0);
 
   const nextProject = () => {
@@ -17,12 +23,24 @@ const HeroSection: React.FC = () => {
   };
 
   return (
-    <section className="hero-section">
+    <section id="hero" className="hero-section">
       <div className="section about-me">
         <img src={profilePic} alt="Mi foto" className="profile-pic" />
         <div className="description">
-          <p>Soy un apasionado desarrollador web con experiencia en...</p>
-          <a href="#about" className="more-info">Más sobre mí...</a>
+          <p>
+            Soy un apasionado aprendiz de programador! Me gusta pasar mis horas libres y no tan libres frente al computador tratando de dar lo mejor de mí, y mi poder de crear código! 😊🫡
+          </p>
+          {/* ✅ Enlace que activa la sección "about" */}
+          <a
+            href="#"
+            className="more-info"
+            onClick={(e) => {
+              e.preventDefault();
+              setActiveSection('about');
+            }}
+          >
+            Más sobre mí...
+          </a>
         </div>
       </div>
 

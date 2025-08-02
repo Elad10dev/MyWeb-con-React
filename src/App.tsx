@@ -12,15 +12,15 @@ const App: React.FC = () => {
   const renderSection = () => {
     switch (activeSection) {
       case 'home':
-        return <HeroSection />;
+        return <HeroSection setActiveSection={setActiveSection} />; // ✅ Aquí estaba el error
       case 'about':
         return <About />;
-      case 'projects':
-        return <Projects />;
+      case 'projects':        
+        return <Projects setActiveSection={setActiveSection} />;
       case 'contact':
         return <Contact />;
       default:
-        return <HeroSection />;
+        return <HeroSection setActiveSection={setActiveSection} />;
     }
   };
 

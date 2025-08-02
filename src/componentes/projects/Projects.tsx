@@ -2,15 +2,26 @@ import React from 'react';
 import projects from '../projects/projectsData';
 import './Project.css';
 
-const ProjectsSection: React.FC = () => {
+interface ProjectsSectionProps {
+  setActiveSection: (section: string) => void;
+}
+
+const ProjectsSection: React.FC<ProjectsSectionProps> = ({ setActiveSection }) => {
   return (
-    <section className="projects-section">
+    <section id="projects" className="projects-section">
       <h2>Proyectos</h2>
       <div className="projects-container">
         {projects.map(project => (
           <div key={project.id} className="project-item">
             <img src={project.img} alt={`Proyecto ${project.id}`} />
-            <button onClick={() => window.open(project.link, '_blank')}>Saber más</button>
+            <button
+              onClick={() => {
+                setActiveSection('contact');
+                document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
+              }}
+            >
+              Saber más
+            </button>
           </div>
         ))}
       </div>
