@@ -1,10 +1,12 @@
 import React from 'react';
 import { FaDatabase, FaEnvelope, FaLinkedin, FaGithub } from 'react-icons/fa';
 import { SiTypescript, SiJavascript, SiHtml5, SiMysql, SiPostgresql, SiCss3, SiPython } from 'react-icons/si';
-import profilePic from '../../imagenes/yo.jpg';
+//import profilePic from '../../imagenes/yo.jpg';
 import projects from '../projects/projectsData';
 import './HeroSection.css';
 
+
+const profilePic = "https://imaganesportafolio.s3.us-east-2.amazonaws.com/imagenes/yo.jpg";
 // ✅ Declaración de props
 interface HeroSectionProps {
   setActiveSection: (section: string) => void;

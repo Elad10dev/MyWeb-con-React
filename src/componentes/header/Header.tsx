@@ -1,9 +1,14 @@
 import React from 'react';
 import './Header.css';
-import homeIcon from '../../imagenes/3d-house.png';
-import aboutIcon from '../../imagenes/request.png';
-import projectsIcon from '../../imagenes/project-management.png';
-import contactIcon from '../../imagenes/customer-service.png';
+//import homeIcon from '../../imagenes/3d-house.png';
+//import aboutIcon from '../../imagenes/request.png';
+//import projectsIcon from '../../imagenes/project-management.png';
+//import contactIcon from '../../imagenes/customer-service.png';
+
+const homeIcon = "https://imaganesportafolio.s3.us-east-2.amazonaws.com/imagenes/3d-house.png";
+const aboutIcon = "https://imaganesportafolio.s3.us-east-2.amazonaws.com/imagenes/request.png";
+const projectsIcon = "https://imaganesportafolio.s3.us-east-2.amazonaws.com/imagenes/project-management.png";
+const contactIcon = "https://imaganesportafolio.s3.us-east-2.amazonaws.com/imagenes/customer-service.png";
 
 interface HeaderProps {
   setActiveSection: (section: string) => void;

@@ -4,7 +4,7 @@
   justify-content: space-between;
   height: 100vh;
   color: #ffffff; /* Texto en color blanco */
-  background-image: url("../../imagenes/telescopio.jpg"); /* Ruta desde la carpeta `public` */
+  background-image: url("https://imaganesportafolio.s3.us-east-2.amazonaws.com/imagenes/telescopio.jpg"); /* Ruta desde la carpeta `public` */
   background-size: cover; /* Ajusta el fondo para cubrir toda la sección */
   background-position: center;
   position: relative;

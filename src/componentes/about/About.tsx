@@ -1,7 +1,7 @@
 import React from 'react';
-import profilePic from '../../imagenes/yo.jpg';
+//import profilePic from '../../imagenes/yo.jpg';
 import './About.css';
-
+const profilePic = "https://imaganesportafolio.s3.us-east-2.amazonaws.com/imagenes/customer-service.png";
 const AboutSection: React.FC = () => {
   return (
     <section id="about" className="about-section">

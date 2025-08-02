@@ -4,7 +4,7 @@
   justify-content: center;
   align-items: center;
   padding: 40px 0;
-  background-image: url("https://pixelshares.com/w/img/full/5/3/9/619344-1920x1080-desktop-hd-galaxy-pc-wallpaper.jpg"); /* Ruta desde la carpeta `public` */
+  background-image: url("https://imaganesportafolio.s3.us-east-2.amazonaws.com/imagenes/telescopio.jpg"); /* Ruta desde la carpeta `public` */
   background-size: cover; /* Ajusta el fondo para cubrir toda la sección */
   background-position: center;
   position: relative;

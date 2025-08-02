@@ -1,16 +1,49 @@
 .contact-section {
-    background: #2c003e;
-    color: #fff;
-    padding: 60px 20px;
-    text-align: center;
-  }
-  
-  .contact-section h2 {
-    font-size: 2rem;
-    margin-bottom: 20px;
-  }
-  
-  .contact-section p {
-    font-size: 1.2rem;
-  }
-  
+  position: relative;
+  background-image: url("https://th.bing.com/th/id/R.b3bb140bee2829fff5d901d50e56e1a2?rik=O1RivvYAm5Z%2fTg&pid=ImgRaw&r=0");
+  background-size: cover;
+  background-position: center;
+  color: #fff;
+  padding: 60px 20px;
+  text-align: center;
+  overflow: hidden;
+  animation: contactSlide 80s alternate infinite;
+  z-index: 0;
+}
+
+/* Animación de fondo */
+@keyframes contactSlide {
+  from { background-position: top; background-size: 1600px; }
+  to { background-position: bottom; background-size: 1400px; }
+}
+
+/* Capa oscura superpuesta */
+.contact-section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5); /* Oscurece la imagen de fondo */
+  z-index: 1;
+}
+
+/* Contenido encima de la capa oscura */
+.contact-section h2,
+.contact-section p {
+  position: relative;
+  z-index: 2;
+}
+
+/* Títulos y texto */
+.contact-section h2 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+}
+
+.contact-section p {
+  font-size: 1.2rem;
+  max-width: 600px;
+  margin: 0 auto;
+}
